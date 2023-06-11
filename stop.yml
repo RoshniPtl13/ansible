@@ -1,0 +1,9 @@
+- name: Stop instances
+  hosts: localhost
+  tasks:
+    - name: Stop instances that were previously launched
+      ec2:
+        state: stopped
+        region: ca-central-1
+        instance_tags:
+           Name: Demo_server
